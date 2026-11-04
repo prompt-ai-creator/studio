@@ -1,4 +1,4 @@
-const CACHE = 'pocket-studio-v1';
+const CACHE = 'pocket-studio-v5.5';
 const ASSETS = ['./', './index.html', './manifest.json', './icon.svg'];
 
 self.addEventListener('install', e => {
@@ -19,6 +19,6 @@ self.addEventListener('fetch', e => {
       const copy = res.clone();
       caches.open(CACHE).then(c => c.put(e.request, copy)).catch(() => {});
       return res;
-    }).catch(() => caches.match('./index.html')))
+    }).catch(() => caches.match('./index.html'))
   );
 });
